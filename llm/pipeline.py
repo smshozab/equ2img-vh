@@ -10,7 +10,7 @@ from export.exporter import scene_to_json
 from llm.base import LLMError, LLMProvider, extract_json
 from llm.gateway import GatewayProvider
 from llm.gemini import GeminiProvider
-from llm.openai import OpenAIProvider
+from llm.openai import OpenAIProvider, OpenRouterProvider
 from llm.prompts import SYSTEM_PROMPT, build_repair_prompt
 from math_engine.validator import validate_scene, validate_scene_dict
 from renderer.base import RenderReport, render_scene
@@ -21,6 +21,8 @@ def make_provider(settings: Settings | None = None) -> LLMProvider:
     s = settings or get_settings()
     if s.llm_provider == "gemini":
         return GeminiProvider(s.gemini_api_key, s.gemini_model)
+    if s.llm_provider == "openrouter":
+        return OpenRouterProvider(s.openrouter_api_key, s.openrouter_model)
     if s.llm_provider == "openai":
         return OpenAIProvider(s.openai_api_key, s.openai_model)
     return GatewayProvider(s.gateway_api_key, s.gateway_base_url, s.gateway_model)

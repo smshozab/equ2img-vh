@@ -24,12 +24,14 @@ class Settings:
     gemini_model: str
     openai_api_key: str | None
     openai_model: str
+    openrouter_api_key: str | None
+    openrouter_model: str
     max_repair_attempts: int
 
 
 def get_settings() -> Settings:
     return Settings(
-        llm_provider=os.getenv("LLM_PROVIDER", "gemini" if os.getenv("GEMINI_API_KEY") else "gateway").lower(),
+        llm_provider=os.getenv("LLM_PROVIDER", "openrouter" if os.getenv("OPENROUTER_API_KEY") else ("gemini" if os.getenv("GEMINI_API_KEY") else "gateway")).lower(),
         gateway_api_key=os.getenv("AI_GATEWAY_API_KEY"),
         gateway_base_url=os.getenv("AI_GATEWAY_BASE_URL", "https://ai-gateway.vercel.sh/v1"),
         gateway_model=os.getenv("AI_GATEWAY_MODEL", "openai/gpt-4o-mini"),
@@ -37,5 +39,7 @@ def get_settings() -> Settings:
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         openai_model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
+        openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
+        openrouter_model=os.getenv("OPENROUTER_MODEL", "google/gemini-2.0-flash-001"),
         max_repair_attempts=int(os.getenv("MAX_REPAIR_ATTEMPTS", "3")),
     )
