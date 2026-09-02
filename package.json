@@ -1,0 +1,11 @@
+{
+  "name": "math-to-image",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Natural language -> mathematical equations -> image. Python/Streamlit app; this file only exists so the preview can launch the dev server.",
+  "scripts": {
+    "setup": "uv venv .venv && uv pip install --python .venv/bin/python -r requirements.txt",
+    "dev": ".venv/bin/python -m streamlit run app.py --server.port 3000 --server.address 0.0.0.0 --server.headless true",
+    "test": ".venv/bin/python -m pytest -q"
+  }
+}
