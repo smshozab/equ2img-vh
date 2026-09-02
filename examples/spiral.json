@@ -1,0 +1,15 @@
+{
+  "title": "Logarithmic Spiral",
+  "coordinate_system": "cartesian",
+  "bounds": [-9, 9, -9, 9],
+  "objects": [
+    {
+      "type": "polar",
+      "equation": "0.1*exp(0.15*theta)",
+      "range": [0, 31.4159],
+      "samples": 8000,
+      "label": "r = 0.1 e^{0.15 theta}",
+      "style": { "color": "#155e4f", "line_width": 2.2 }
+    }
+  ]
+}

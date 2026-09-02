@@ -1,0 +1,29 @@
+{
+  "title": "Interfering Waves",
+  "coordinate_system": "cartesian",
+  "bounds": [-12.566, 12.566, -3, 3],
+  "render": { "width": 2400, "height": 1200, "show_axes": true, "show_grid": true, "equal_aspect": false },
+  "objects": [
+    {
+      "type": "cartesian",
+      "equation": "sin(x)",
+      "domain": [-12.566, 12.566],
+      "label": "sin(x)",
+      "style": { "color": "#1d3557", "line_width": 2 }
+    },
+    {
+      "type": "cartesian",
+      "equation": "sin(2*x)/2",
+      "domain": [-12.566, 12.566],
+      "label": "sin(2x)/2",
+      "style": { "color": "#457b9d", "line_width": 1.6, "line_style": "dashed" }
+    },
+    {
+      "type": "cartesian",
+      "equation": "sin(x) + sin(2*x)/2",
+      "domain": [-12.566, 12.566],
+      "label": "sum",
+      "style": { "color": "#b3402a", "line_width": 2.6 }
+    }
+  ]
+}

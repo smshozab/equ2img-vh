@@ -1,0 +1,17 @@
+{
+  "title": "Heart",
+  "coordinate_system": "cartesian",
+  "bounds": [-20, 20, -20, 16],
+  "objects": [
+    {
+      "type": "parametric",
+      "x": "16*sin(t)^3",
+      "y": "13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t)",
+      "parameter": "t",
+      "range": [0, 6.283185307179586],
+      "samples": 4000,
+      "label": "Heart curve",
+      "style": { "color": "#9d1c30", "line_width": 3, "fill": true, "fill_color": "#c9314b" }
+    }
+  ]
+}

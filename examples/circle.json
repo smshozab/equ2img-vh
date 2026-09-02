@@ -1,0 +1,13 @@
+{
+  "title": "Circle",
+  "coordinate_system": "cartesian",
+  "bounds": [-5, 5, -5, 5],
+  "objects": [
+    {
+      "type": "implicit",
+      "equation": "x^2 + y^2 - 4",
+      "domain": { "x": [-5, 5], "y": [-5, 5] },
+      "style": { "color": "#1d3557", "line_width": 2.5 }
+    }
+  ]
+}
