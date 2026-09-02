@@ -29,7 +29,7 @@ class Settings:
 
 def get_settings() -> Settings:
     return Settings(
-        llm_provider=os.getenv("LLM_PROVIDER", "gateway").lower(),
+        llm_provider=os.getenv("LLM_PROVIDER", "gemini" if os.getenv("GEMINI_API_KEY") else "gateway").lower(),
         gateway_api_key=os.getenv("AI_GATEWAY_API_KEY"),
         gateway_base_url=os.getenv("AI_GATEWAY_BASE_URL", "https://ai-gateway.vercel.sh/v1"),
         gateway_model=os.getenv("AI_GATEWAY_MODEL", "openai/gpt-4o-mini"),
