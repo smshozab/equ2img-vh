@@ -40,6 +40,6 @@ def get_settings() -> Settings:
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         openai_model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
         openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
-        openrouter_model=os.getenv("OPENROUTER_MODEL", "google/gemini-2.0-flash-001"),
+        openrouter_model=os.getenv("OPENROUTER_MODEL", "google/gemini-2.5-flash"),
         max_repair_attempts=int(os.getenv("MAX_REPAIR_ATTEMPTS", "3")),
     )
