@@ -120,14 +120,13 @@ def show_result(scene: Scene, fig, report) -> None:
                 st.latex(eq)
 
         st.subheader("Rendering Information")
-        stats = st.columns(2)
-        stats[0].metric("Coordinate system", scene.coordinate_system.capitalize())
-        stats[1].metric("Status", "Success" if report.success else "Failed")
-        stats2 = st.columns(4)
-        stats2[0].metric("Objects", report.n_objects)
-        stats2[1].metric("Valid", report.n_valid)
-        stats2[2].metric("Invalid", report.n_invalid)
-        stats2[3].metric("Finite samples", f"{report.finite_percent:.1f}%")
+        st.markdown(
+            f"- **Coordinate system:** {scene.coordinate_system.capitalize()}\n"
+            f"- **Status:** {'Success' if report.success else 'Failed'}\n"
+            f"- **Objects:** {report.n_objects} "
+            f"({report.n_valid} valid, {report.n_invalid} invalid)\n"
+            f"- **Finite samples:** {report.finite_percent:.1f}%"
+        )
         st.caption(
             f"Resolution: {scene.render.width} × {scene.render.height} px · "
             f"Bounds: [{scene.bounds[0]:g}, {scene.bounds[1]:g}] × "
